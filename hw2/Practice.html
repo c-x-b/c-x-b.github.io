@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索跳转</title>
+</head>
+<body>
+    <h1>欢迎使用搜索跳转页面</h1>
+    <p>在下面的输入框中输入您要搜索的关键词，然后点击按钮进行搜索：</p>
+    <input type="text" id="searchInput" placeholder="请输入搜索关键词">
+    <button onclick="searchBaidu()">搜索</button>
+
+    <script>
+        function searchBaidu() {
+            const keyword = document.getElementById("searchInput").value;
+            if (keyword) {
+                const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`;
+                window.location.href = baiduSearchUrl;
+            } else {
+                alert("请输入搜索关键词！");
+            }
+        }
+    </script>
+</body>
+</html>
